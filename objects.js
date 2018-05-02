@@ -1,23 +1,37 @@
 // practice with making objects
 let restaurant = {
-  name: "Italian Bistro", //object property/key: value -string
-  seatingCapacity: 120, //object property/key: value -number
+  name: "Italian Bistro", //object PROPERTY/KEY: value -string
+  //UNDERSCORE indicates a property or value should not be modified directly by other code
+  _seatingCapacity: 120, //object property/key: value -number
   hasDineInSpecial: false, //object property/key: value -boolean
   entrees: ["Penne alla Bolognese", "Chicken Cacciatore", "Linguine pesto"], //object property/key: value -array
-  //property/key to a function is called a method see below
+  //property/key to a function is called a METHOD see below
   openRestaurant: () => { //the old way before ES6
     return "Unlock the door, flip the open sign. We are open for business!";
   },
+
   closeRestaurant() { //updated way since ES6, no colon or arrow
     return 'Lock the door, flip the open sign. We are closed.'
   },
-  hasSpecial() { //use keyword 'this.propertName' to access property/key within the same object
+
+  hasSpecial() { //use .THIS keyword 'this.propertName' to access property/key within the same object
     if (this.hasDineInSpecial) {
       return `Write the special on the board.`;
     } else {
       return `Don't write on the board!`;
     }
+  },
+
+//SETTER method to modify a property
+  set seatingCapacity(newCapacity) { //excepts the value of the newCapacity variable
+      if (typeof newCapacity === 'number') { //check if the value is a vaild number
+        this._seatingCapacity = newCapacity; //change _seatingCapacity to new value if valid
+      console.log(`${newCapacity} is valid input.`); //log sucess message
+    } else {
+        console.log(`Change ${newCapacity} to a number.`) //if not valid throw error 
+    }
   }
+
 };
 
 //console.log(`Restaurant info:`);
