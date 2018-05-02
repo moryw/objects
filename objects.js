@@ -22,17 +22,35 @@ let restaurant = {
     }
   },
 
-//SETTER method to modify a property
+//SETTER method to set/modify a property
   set seatingCapacity(newCapacity) { //excepts the value of the newCapacity variable
       if (typeof newCapacity === 'number') { //check if the value is a vaild number
         this._seatingCapacity = newCapacity; //change _seatingCapacity to new value if valid
-      console.log(`${newCapacity} is valid input.`); //log sucess message
+        console.log(`${newCapacity} is valid input.`); //log sucess message
     } else {
-        console.log(`Change ${newCapacity} to a number.`) //if not valid throw error 
+        console.log(`Change ${newCapacity} to a number.`) //if not valid throw error
     }
-  }
+  },
 
+//GETTER method to get the value of a property
+  get seatingCapacity() {
+    console.log(`There are ${this._seatingCapacity} seats at Italian Bistro.`); //this logs a message but is not necassary
+    return this._seatingCapacity; //RETURN here makes sure that the a value not just a log is assigned to a variable
+  }
 };
+
+
+// console.log(`${restaurant._seatingCapacity} - Orignal seating`);
+// restaurant.seatingCapacity = 150;
+// console.log(`${restaurant._seatingCapacity} - Updated seating`);
+// restaurant.seatingCapacity;
+//
+// const seats = restaurant.seatingCapacity;
+// console.log(`The seats var = ${seats}`);
+
+// console.log(restaurant._seatingCapacity);
+// restaurant.seatingCapacity = 100;
+// console.log(restaurant._seatingCapacity);
 
 //console.log(`Restaurant info:`);
 //console.log(restaurant);;
@@ -127,11 +145,51 @@ person.hobbies = [`Gaming`]
 //console.log(person);
 
 //console.log(`${person.name}'s ${person[alarm]}`);
-console.log(person.sayHelloName());
-console.log(friend.sayHelloName());
+//console.log(person.sayHelloName());
+//console.log(friend.sayHelloName());
 //console.log(person.sayHello('Boss'));
 //console.log(`${person.name}'s age is ${person.age} and his favorite hobby is ${person.hobbies[0]}.`);
 //console.log(person.sayGoodbye('Dude'));
+
+
+//practice with SETTERs
+let person2 = {
+  _name: 'Lu Xun',
+  _age: 137,
+
+  set age(newAge) {
+    if (typeof newAge === `number`) {
+      this._age = newAge;
+      console.log(`Age has been updated to ${this._age}`);
+    } else {
+      console.log(`Invalid input`);
+      return `Invalid input`;
+    }
+  },
+
+  get age() {
+    console.log(`${this._name} is ${this._age} years old.`);
+    return this._age;
+  }
+
+};
+
+console.log(`Users current age is ${person2._age}`);
+person2.age = 39;
+person2.age;
+let userAge = person2.age
+console.log(`userAge is: ${userAge}`);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
