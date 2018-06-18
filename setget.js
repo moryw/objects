@@ -4,6 +4,10 @@ const person = {
   _yearsBaptized: 15,
   _yearsMarried: 1.8,
 
+  sayHello() {
+    return 'Hello!';
+  },
+
   get name() {
     console.log('This is using getter.');
     return this._name;
@@ -25,8 +29,9 @@ const person = {
 
 };
 
-console.log(person.age);
-person.age = 30;
-console.log(person.age);
-person._age = "thirty";
-console.log(person.age);
+console.log(person.sayHello());
+// console.log(person.age);
+// person.age = 30;
+// console.log(person.age);
+// person._age = "thirty";
+// console.log(person.age);
