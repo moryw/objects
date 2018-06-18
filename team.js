@@ -18,16 +18,10 @@ const team = {
     return this._games;
   },
 
-  addPlayer: (firstName,lastName,age) => {
+  addPlayer(firstName,lastName,age) {
+    let player = {firstName: firstName, lastName: lastName, age: age};
 
+    this.players.push(player);
   }
 
 };
-
-
-console.log(`The players are: ${team.players}`);
-console.log(`The games are: ${team.games}`);
-
-if (true) {
-
-}
